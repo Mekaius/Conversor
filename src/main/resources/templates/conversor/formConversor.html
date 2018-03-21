@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<title>Conversor de Moedas</title>
+<script>
+
+	function converter(){
+		var vCnv = document.getElementsByClassName("vCnv");
+		var espec = document.getElementById("espec").value;
+		var conv;
+		for(var i=0; i<vCnv.length; i++){
+			if(vCnv[i].checked == true){
+				document.getElementById("conv").innerHTML = vCnv[i].value * espec;
+
+			}
+		}
+		
+		console.log(vCnv);
+		console.log(espec);
+		console.log(conv);	
+		return conv;
+	}
+</script>
+</head>
+<body>
+	<h1>Conversor de Moedas</h1>
+	<form method="post">
+		<div>
+			Especie<br><input type="text" name="valorEspecie" value="" id="espec"/><br>
+			
+		</div>
+		<div>
+			<input type="radio" name="valorConversao" value="3.261" class="vCnv"  />Dólar
+			<input type="radio" name="valorConversao" class="vCnv"  value="3.823"/>Libra
+			<input type="radio" name="valroConversao" class="vCnv"  value="0.031"/>Iene<br>
+			<button type="button" name="conversaoDoValor" id="conv" >
+			<button type="submit" name="conversaoDoValor" onclick="converter()">Calcular</button>
+		</div>
+	</form>
+</body>
+
+</html>
